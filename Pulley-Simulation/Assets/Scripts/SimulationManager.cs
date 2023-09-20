@@ -22,6 +22,12 @@ public class SimulationManager : MonoBehaviour
         userPredictionBlock.Activate();
     }
 
+    public void StopSimulation() {
+        blockA.Deactivate();
+        blockB.Deactivate();
+        userPredictionBlock.Deactivate();
+    }
+
     private void CalculateBlocks() {
         blockA.SetVelocityMagnitude((-3f / 2) * blockB.velocity.magnitude);
         blockA.SetAccelerationMagnitude((3f / 2) * blockB.acceleration.magnitude);
@@ -30,7 +36,20 @@ public class SimulationManager : MonoBehaviour
     }
 
     private void SetPlayerPrediction() {
-        userPredictionBlock.SetVelocityMagnitude(float.Parse(velocityPrediction.text));
-        userPredictionBlock.SetAccelerationMagnitude(float.Parse(accelerationPrediction.text));
+
+
+        float predictedVelocity = 0;
+        if (velocityPrediction.text != null) {
+            predictedVelocity = float.Parse(velocityPrediction.text);
+        }
+
+        float predictedAcceleration = 0;
+        if (accelerationPrediction.text != null)
+        {
+            predictedAcceleration = float.Parse(velocityPrediction.text);
+        }
+
+        userPredictionBlock.SetVelocityMagnitude(predictedVelocity);
+        userPredictionBlock.SetAccelerationMagnitude(predictedAcceleration);
     }
 }

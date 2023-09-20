@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PhysicsObject : MonoBehaviour
 {
+    [SerializeField] private SimulationManager simulationManager;
 
     public Vector2 velocity;
     public Vector2 acceleration;
@@ -24,6 +25,12 @@ public class PhysicsObject : MonoBehaviour
         active = true;
     }
 
+    public void Deactivate()
+    { 
+        //activatedTime = Time.time;
+        active = false;
+    }
+
     private void FixedUpdate()
     {
         if (active == true) {
@@ -40,6 +47,13 @@ public class PhysicsObject : MonoBehaviour
     public void SetAccelerationMagnitude(float magnitude)
     {
         acceleration = acceleration.normalized * magnitude;
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "Wall") {
+            simulationManager.StopSimulation();
+        }
     }
 
 }

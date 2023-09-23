@@ -6,7 +6,9 @@ public class PhysicsObject : MonoBehaviour
 {
     [SerializeField] private SimulationManager simulationManager;
 
+    private Vector2 initialVelocity;
     public Vector2 velocity;
+    private Vector2 initialAcceleration;
     public Vector2 acceleration;
 
     private float activatedTime;
@@ -16,6 +18,8 @@ public class PhysicsObject : MonoBehaviour
 
     private void Start()
     {
+        initialVelocity = velocity;
+        initialAcceleration = acceleration;
         startPosition = transform.position;
         active = false;
     }
@@ -41,12 +45,12 @@ public class PhysicsObject : MonoBehaviour
     }
 
     public void SetVelocityMagnitude(float magnitude) {
-        velocity = velocity.normalized * magnitude;
+        velocity = initialVelocity.normalized * magnitude;
     }
 
     public void SetAccelerationMagnitude(float magnitude)
     {
-        acceleration = acceleration.normalized * magnitude;
+        acceleration = initialAcceleration.normalized * magnitude;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

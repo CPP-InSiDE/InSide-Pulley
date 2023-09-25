@@ -13,12 +13,21 @@ public class SimulationManager : MonoBehaviour
     [SerializeField] private PhysicsObject blockB;
     [SerializeField] private PhysicsObject userPredictionBlock;
 
+    [SerializeField] private SpriteRenderer userPredictionBlockSpriteRenderer;
+
     [SerializeField] private TMP_InputField velocityB;
     [SerializeField] private TMP_InputField accelerationB;
 
     [SerializeField] private TMP_InputField velocityPrediction;
     [SerializeField] private TMP_InputField accelerationPrediction;
 
+    private Color defaultPredictionColor;
+
+
+    private void Start()
+    {
+        defaultPredictionColor = userPredictionBlockSpriteRenderer.color;    
+    }
 
     public void StartSimulation() {
         SetBBlock();
@@ -78,5 +87,13 @@ public class SimulationManager : MonoBehaviour
 
         userPredictionBlock.SetVelocityMagnitude(predictedVelocity);
         userPredictionBlock.SetAccelerationMagnitude(predictedAcceleration);
+
+        if (userPredictionBlock.velocity == blockA.velocity && userPredictionBlock.acceleration == blockA.acceleration)
+        {
+            userPredictionBlockSpriteRenderer.color = Color.green;
+        }
+        else {
+            userPredictionBlockSpriteRenderer.color = defaultPredictionColor;
+        }
     }
 }

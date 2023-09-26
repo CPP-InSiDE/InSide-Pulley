@@ -16,11 +16,11 @@ public class Simulation2Manager : SimulationManager
     protected override void CalculatePresetBlocks()
     {
         SetBaseBlock();
-        solutionBlock.SetVelocityMagnitude((-4f) * inputBlock.velocity.magnitude * inputBlock.CheckOriginalDirection());
-        solutionBlock.SetAccelerationMagnitude((-4f) * inputBlock.acceleration.magnitude * inputBlock.CheckOriginalDirection());
+        solutionBlock.SetVelocityMagnitude((-4f) * inputBlock.velocity.magnitude * inputBlock.CheckOriginalVelocityDirection());
+        solutionBlock.SetAccelerationMagnitude((-4f) * inputBlock.acceleration.magnitude * inputBlock.CheckOriginalAccelerationDirection());
 
-        pulley.SetVelocityMagnitude((1/2f) * inputBlock.velocity.magnitude * inputBlock.CheckOriginalDirection());
-        pulley.SetAccelerationMagnitude((1/2f) * inputBlock.acceleration.magnitude * inputBlock.CheckOriginalDirection());
+        pulley.SetVelocityMagnitude((2f) * inputBlock.velocity.magnitude * inputBlock.CheckOriginalVelocityDirection());
+        pulley.SetAccelerationMagnitude((2f) * inputBlock.acceleration.magnitude * inputBlock.CheckOriginalAccelerationDirection());
     }
 
     protected virtual void SetBaseBlock()

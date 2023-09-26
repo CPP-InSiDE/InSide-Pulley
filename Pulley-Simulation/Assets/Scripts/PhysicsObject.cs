@@ -60,4 +60,9 @@ public class PhysicsObject : MonoBehaviour
         }
     }
 
+    public int CheckOriginalDirection (){
+
+        return (int) Mathf.Sign(Vector2.Dot(initialVelocity, velocity));
+    }
+
 }

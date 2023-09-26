@@ -9,19 +9,23 @@ public class SimulationManager : MonoBehaviour
     public float defaultBVelocity;
     public float defaultBAcceleration;
 
-    [SerializeField] private PhysicsObject blockA;
-    [SerializeField] private PhysicsObject blockB;
-    [SerializeField] private PhysicsObject userPredictionBlock;
+    [SerializeField] protected List<PhysicsObject> movingBlocks;
+    [SerializeField] protected PhysicsObject solutionBlock;
+    //[SerializeField] protected PhysicsObject blockB;
+    [SerializeField] protected PhysicsObject userPredictionBlock;
 
-    [SerializeField] private SpriteRenderer userPredictionBlockSpriteRenderer;
+    [SerializeField] protected SpriteRenderer userPredictionBlockSpriteRenderer;
 
-    [SerializeField] private TMP_InputField velocityB;
-    [SerializeField] private TMP_InputField accelerationB;
+    [SerializeField] protected TMP_InputField velocityInput;
+    [SerializeField] protected TMP_InputField accelerationInput;
 
-    [SerializeField] private TMP_InputField velocityPrediction;
-    [SerializeField] private TMP_InputField accelerationPrediction;
+    [SerializeField] protected TMP_InputField velocityPrediction;
+    [SerializeField] protected TMP_InputField accelerationPrediction;
 
-    private Color defaultPredictionColor;
+    protected Color defaultPredictionColor;
+
+    [SerializeField] protected int directionMultiplier = 1;
+    [SerializeField] private RectTransform directionArrow;
 
 
     private void Start()
@@ -30,47 +34,35 @@ public class SimulationManager : MonoBehaviour
     }
 
     public void StartSimulation() {
-        SetBBlock();
-        CalculateBlocks();
+        CalculatePresetBlocks();
         SetPlayerPrediction();
-        blockA.Activate();
+        foreach (PhysicsObject block in movingBlocks) {
+            block.Activate();
+        }
+        /*blockA.Activate();
         blockB.Activate();
-        userPredictionBlock.Activate();
+        userPredictionBlock.Activate();*/
     }
 
     public void StopSimulation() {
-        blockA.Deactivate();
+        Debug.Log("Stop Simulation");
+        foreach (PhysicsObject block in movingBlocks)
+        {
+            block.Deactivate();
+        }
+        /*blockA.Deactivate();
         blockB.Deactivate();
-        userPredictionBlock.Deactivate();
+        userPredictionBlock.Deactivate();*/
     }
 
-    private void CalculateBlocks() {
-        blockA.SetVelocityMagnitude((-3f / 2) * blockB.velocity.magnitude);
-        blockA.SetAccelerationMagnitude((3f / 2) * blockB.acceleration.magnitude);
+    protected virtual void CalculatePresetBlocks() {
+        /*blockA.SetVelocityMagnitude((-3f / 2) * blockB.velocity.magnitude);
+        blockA.SetAccelerationMagnitude((3f / 2) * blockB.acceleration.magnitude);*/
        
     }
 
-    private void SetBBlock() {
-        float bVelocity;
-        float bAcceleration;
-
-        if (float.TryParse(velocityB.text, out bVelocity) == false)
-        {
-            bVelocity = defaultBVelocity;
-            velocityB.text = "" + bVelocity;
-        }
-
-        if (float.TryParse(accelerationB.text, out bAcceleration) == false)
-        {
-            bAcceleration = defaultBAcceleration;
-            accelerationB.text = "" + bAcceleration;
-        }
-
-
-        blockB.SetVelocityMagnitude(bVelocity);
-        blockB.SetAccelerationMagnitude(bAcceleration);
-    }
-    private void SetPlayerPrediction() {
+    
+    protected virtual void SetPlayerPrediction() {
 
 
         float predictedVelocity = 0;
@@ -88,12 +80,17 @@ public class SimulationManager : MonoBehaviour
         userPredictionBlock.SetVelocityMagnitude(predictedVelocity);
         userPredictionBlock.SetAccelerationMagnitude(predictedAcceleration);
 
-        if (userPredictionBlock.velocity == blockA.velocity && userPredictionBlock.acceleration == blockA.acceleration)
+        if (userPredictionBlock.velocity == solutionBlock.velocity && userPredictionBlock.acceleration == solutionBlock.acceleration)
         {
             userPredictionBlockSpriteRenderer.color = Color.green;
         }
         else {
             userPredictionBlockSpriteRenderer.color = defaultPredictionColor;
         }
+    }
+
+    public void FlipDirection() {
+        directionMultiplier *= -1;
+        directionArrow.Rotate(new Vector3(0, 0, 180f));
     }
 }

@@ -16,7 +16,7 @@ public class Simulation1Manager : SimulationManager
     {
         SetBaseBlock();
         solutionBlock.SetVelocityMagnitude((-3f / 2) * inputBlock.velocity.magnitude * inputBlock.CheckOriginalVelocityDirection());
-        solutionBlock.SetAccelerationMagnitude((3f / 2) * inputBlock.acceleration.magnitude * inputBlock.CheckOriginalAccelerationDirection());
+        solutionBlock.SetAccelerationMagnitude((-3f / 2) * inputBlock.acceleration.magnitude * inputBlock.CheckOriginalAccelerationDirection());
     }
 
     protected virtual void SetBaseBlock()

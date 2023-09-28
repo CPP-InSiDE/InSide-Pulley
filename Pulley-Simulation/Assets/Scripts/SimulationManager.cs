@@ -4,6 +4,15 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
+
+[System.Serializable]
+public class BlockInputs
+{
+    public PhysicsObject affectedBlock;
+    [SerializeField] protected TMP_InputField blockVelocity;
+    [SerializeField] protected TMP_InputField blockAcceleration;
+}
+
 public class SimulationManager : MonoBehaviour
 {
     public float defaultBVelocity;
@@ -18,6 +27,9 @@ public class SimulationManager : MonoBehaviour
 
     [SerializeField] protected TMP_InputField velocityInput;
     [SerializeField] protected TMP_InputField accelerationInput;
+
+    [SerializeField] protected BlockInputs predictionBlock;
+    [SerializeField] protected List<BlockInputs> inputBlocks; 
 
     [SerializeField] protected TMP_InputField velocityPrediction;
     [SerializeField] protected TMP_InputField accelerationPrediction;

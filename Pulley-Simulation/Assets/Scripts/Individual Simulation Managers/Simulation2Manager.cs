@@ -13,9 +13,9 @@ public class Simulation2Manager : SimulationManager
     }
 
 
-    protected override void CalculatePresetBlocks()
+    protected override void CalculateOutputBlocks()
     {
-        SetBaseBlock();
+        //SetBaseBlock();
         solutionBlock.SetVelocityMagnitude((-4f) * inputBlock.velocity.magnitude * inputBlock.CheckOriginalVelocityDirection());
         solutionBlock.SetAccelerationMagnitude((-4f) * inputBlock.acceleration.magnitude * inputBlock.CheckOriginalAccelerationDirection());
 
@@ -23,7 +23,7 @@ public class Simulation2Manager : SimulationManager
         pulley.SetAccelerationMagnitude((2f) * inputBlock.acceleration.magnitude * inputBlock.CheckOriginalAccelerationDirection());
     }
 
-    protected virtual void SetBaseBlock()
+    /*protected virtual void SetBaseBlock()
     {
         float bVelocity;
         float bAcceleration;
@@ -43,5 +43,5 @@ public class Simulation2Manager : SimulationManager
 
         inputBlock.SetVelocityMagnitude(bVelocity);
         inputBlock.SetAccelerationMagnitude(bAcceleration);
-    }
+    }*/
 }

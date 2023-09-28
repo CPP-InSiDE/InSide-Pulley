@@ -12,14 +12,14 @@ public class Simulation1Manager : SimulationManager
     }
 
 
-    protected override void CalculatePresetBlocks()
+    protected override void CalculateOutputBlocks()
     {
-        SetBaseBlock();
+        //SetBaseBlock();
         solutionBlock.SetVelocityMagnitude((-3f / 2) * inputBlock.velocity.magnitude * inputBlock.CheckOriginalVelocityDirection());
         solutionBlock.SetAccelerationMagnitude((-3f / 2) * inputBlock.acceleration.magnitude * inputBlock.CheckOriginalAccelerationDirection());
     }
 
-    protected virtual void SetBaseBlock()
+   /* protected virtual void SetBaseBlock()
     {
         float bVelocity;
         float bAcceleration;
@@ -39,5 +39,5 @@ public class Simulation1Manager : SimulationManager
 
         inputBlock.SetVelocityMagnitude(bVelocity * directionMultiplier);
         inputBlock.SetAccelerationMagnitude(bAcceleration * directionMultiplier);
-    }
+    }*/
 }

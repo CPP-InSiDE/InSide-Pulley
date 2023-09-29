@@ -10,13 +10,15 @@ public class BlockInputs
 {
     public PhysicsObject affectedBlock;
     [SerializeField] public TMP_InputField blockVelocity;
+    [SerializeField] public GravityArrow velocityDirection;
     [SerializeField] public TMP_InputField blockAcceleration;
+    [SerializeField] public GravityArrow accelerationDirection;
 }
 
 public class SimulationManager : MonoBehaviour
 {
-    public float defaultBVelocity;
-    public float defaultBAcceleration;
+    //public float defaultBVelocity;
+    //public float defaultBAcceleration;
 
     [SerializeField] protected List<PhysicsObject> movingObjects;
     [SerializeField] protected PhysicsObject solutionBlock;
@@ -36,8 +38,8 @@ public class SimulationManager : MonoBehaviour
 
     protected Color defaultPredictionColor;
 
-    [SerializeField] protected int directionMultiplier = 1;
-    [SerializeField] private RectTransform directionArrow;
+    //[SerializeField] protected int directionMultiplier = 1;
+    //[SerializeField] private RectTransform directionArrow;
 
 
     private void Start()
@@ -78,22 +80,23 @@ public class SimulationManager : MonoBehaviour
 
 
     protected void SetBlockKinematics(BlockInputs block) {
-        float predictedVelocity = 0;
-        if (float.TryParse(block.blockVelocity.text, out predictedVelocity) == false)
-        {
-            block.blockVelocity.text = "" + predictedVelocity;
-        }
+        float setVelocity = 0;
+
+        float.TryParse(block.blockVelocity.text, out setVelocity);
+        
+        block.blockVelocity.text = "" + Mathf.Abs(setVelocity);
+        setVelocity = Mathf.Abs(setVelocity) * block.velocityDirection.GetDirectionMultiplier();
         
 
-        float predictedAcceleration = 0;
-        if (float.TryParse(block.blockAcceleration.text, out predictedAcceleration) == false)
-        {
-            block.blockAcceleration.text = "" + predictedAcceleration;
-        }
+        float setAcceleration = 0;
+        float.TryParse(block.blockAcceleration.text, out setAcceleration);
+        
+        block.blockAcceleration.text = "" + Mathf.Abs(setAcceleration);
+        setAcceleration = Mathf.Abs(setAcceleration) * block.accelerationDirection.GetDirectionMultiplier();
 
 
-        block.affectedBlock.SetVelocityMagnitude(predictedVelocity);
-        block.affectedBlock.SetAccelerationMagnitude(predictedAcceleration);
+        block.affectedBlock.SetVelocityMagnitude(setVelocity);
+        block.affectedBlock.SetAccelerationMagnitude(setAcceleration);
 
         
     }
@@ -111,9 +114,9 @@ public class SimulationManager : MonoBehaviour
         }
     }
 
-    public void FlipDirection() {
+    /*public void FlipDirection() {
         if((directionArrow) == null) return;
         directionMultiplier *= -1;
         directionArrow.Rotate(new Vector3(0, 0, 180f));
-    }
+    }*/
 }

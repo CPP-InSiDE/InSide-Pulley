@@ -61,7 +61,7 @@ public class PhysicsObject : MonoBehaviour
     }
 
     public int CheckOriginalVelocityDirection (){
-        Debug.Log("Velocity Dot Product: " + Vector2.Dot(velocity, initialVelocity));
+        //Debug.Log("Velocity Dot Product: " + Vector2.Dot(velocity, initialVelocity));
         return (int) Mathf.Sign(Vector2.Dot(velocity, initialVelocity));
     }
 

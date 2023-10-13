@@ -2465,6 +2465,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1581610744}
   - component: {fileID: 1581610745}
+  - component: {fileID: 1581610746}
   m_Layer: 0
   m_Name: Simulation Manager
   m_TagString: Untagged
@@ -2518,6 +2519,18 @@ MonoBehaviour:
     blockAcceleration: {fileID: 780020376}
     accelerationDirection: {fileID: 780020377}
   inputBlock: {fileID: 1097663734}
+--- !u!114 &1581610746
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1581610742}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d80048bc8b53a264ebd4a5fc320b08e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1630552437
 GameObject:
   m_ObjectHideFlags: 0

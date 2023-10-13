@@ -6,6 +6,24 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/SimulationSelector.unity
+    guid: a9d3b85f36649e94da4286984bef7984
+  - enabled: 1
     path: Assets/Scenes/Simulation1.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/Simulation2.unity
+    guid: de36c386ca9f50949bd2840621794636
+  - enabled: 1
+    path: Assets/Scenes/Simulation3.unity
+    guid: f979e8a89ea78b14b922099e63fe72d6
+  - enabled: 1
+    path: Assets/Scenes/Simulation4.unity
+    guid: 1453984bb607958418f35bd42f3ede15
+  - enabled: 1
+    path: Assets/Scenes/Simulation5.unity
+    guid: b45399b5b63f7ed4186ec17004e8144b
+  - enabled: 1
+    path: Assets/Scenes/Simulation6.unity
+    guid: 8a01d51bb4771b84c9951ddc1ad95818
   m_configObjects: {}

@@ -37,4 +37,9 @@ public class LineRendererScript : MonoBehaviour
             lineRenderer.SetPosition(1, endPoint.position);
         }
     }
+
+    public float GetLineLength() {
+        //Debug.Log("Line length is: " + (endPoint.position - startPoint.position).magnitude);
+        return (endPoint.position - startPoint.position).magnitude;
+    }
 }

@@ -10157,6 +10157,7 @@ MonoBehaviour:
     velocityDirection: {fileID: 1415421193}
     blockAcceleration: {fileID: 624156968}
     accelerationDirection: {fileID: 308610063}
+  marginOfError: 0.04
   inputBlock: {fileID: 1097663734}
 --- !u!114 &1581610746
 MonoBehaviour:
@@ -10503,11 +10504,11 @@ PrefabInstance:
       objectReference: {fileID: 1207098828, guid: 7332a4c165f7f91429d00588d797de93, type: 3}
     - target: {fileID: 4325290248741356300, guid: 483dc8bfc2252834aa73c55e28d1bdb1, type: 3}
       propertyPath: m_Size.y
-      value: 4.25
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4325290248741356300, guid: 483dc8bfc2252834aa73c55e28d1bdb1, type: 3}
       propertyPath: m_Offset.y
-      value: 1.1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5074323191513234784, guid: 483dc8bfc2252834aa73c55e28d1bdb1, type: 3}
       propertyPath: m_LocalScale.x

@@ -41,6 +41,8 @@ public class SimulationManager : MonoBehaviour
     //[SerializeField] protected int directionMultiplier = 1;
     //[SerializeField] private RectTransform directionArrow;
 
+    [SerializeField] private float marginOfError = .04f;
+
 
     private void Start()
     {
@@ -105,9 +107,12 @@ public class SimulationManager : MonoBehaviour
 
         SetBlockKinematics(predictionBlock);
 
-        if (predictionBlock.affectedBlock.velocity == solutionBlock.velocity && predictionBlock.affectedBlock.acceleration == solutionBlock.acceleration)
+        //if (predictionBlock.affectedBlock.velocity == solutionBlock.velocity && predictionBlock.affectedBlock.acceleration == solutionBlock.acceleration)
+        if(WithinAcceptedRange(predictionBlock.affectedBlock.velocity, solutionBlock.velocity) == true &&
+           WithinAcceptedRange(predictionBlock.affectedBlock.acceleration, solutionBlock.acceleration) == true)
         {
             userPredictionBlockSpriteRenderer.color = Color.green;
+            SetExactSolution();
         }
         else {
             userPredictionBlockSpriteRenderer.color = defaultPredictionColor;
@@ -119,4 +124,26 @@ public class SimulationManager : MonoBehaviour
         directionMultiplier *= -1;
         directionArrow.Rotate(new Vector3(0, 0, 180f));
     }*/
+
+    protected bool WithinAcceptedRange(Vector2 testedValues, Vector2 expectedValues) {
+        if (Mathf.Abs(testedValues.x - expectedValues.x) > Mathf.Abs(expectedValues.x * marginOfError)) {
+            return false;
+        }
+
+        if (Mathf.Abs(testedValues.y - expectedValues.y) > Mathf.Abs(expectedValues.y * marginOfError))
+        {
+            return false;
+        }
+
+        return true;
+    }
+
+    protected void SetExactSolution() {
+        predictionBlock.affectedBlock.velocity = solutionBlock.velocity;
+        predictionBlock.affectedBlock.acceleration = solutionBlock.acceleration;
+
+        //Change text to exact values
+        predictionBlock.blockVelocity.text = "" + (solutionBlock.velocity.magnitude);
+        predictionBlock.blockAcceleration.text = "" + (solutionBlock.acceleration.magnitude);
+    }
 }

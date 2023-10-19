@@ -31,11 +31,31 @@ public class Simulation6Manager : SimulationManager
         solutionBlock.SetAccelerationMagnitude(accelerationMagnitude);
 
 
-        pulleyD.SetVelocityMagnitude(-.5f * velocityMagnitude);
+        /*pulleyD.SetVelocityMagnitude(-.5f * velocityMagnitude);
         pulleyD.SetAccelerationMagnitude(-.5f * accelerationMagnitude);
 
         pulleyC.SetVelocityMagnitude(2f * inputBlockB.velocity.magnitude * inputBlockB.CheckOriginalVelocityDirection());
-        pulleyC.SetAccelerationMagnitude(2f * inputBlockB.acceleration.magnitude * inputBlockB.CheckOriginalAccelerationDirection());
+        pulleyC.SetAccelerationMagnitude(2f * inputBlockB.acceleration.magnitude * inputBlockB.CheckOriginalAccelerationDirection());*/
+
+        float rightPulleyMagnitude = inputBlockC.velocity.magnitude * inputBlockC.CheckOriginalVelocityDirection() +
+                                     -2f * inputBlockB.velocity.magnitude * inputBlockB.CheckOriginalVelocityDirection() +
+                                     inputBlockA.velocity.magnitude * inputBlockA.CheckOriginalVelocityDirection();
+
+        float leftPulleyMagnitude = velocityMagnitude + 2f * rightPulleyMagnitude +
+                                    -2f * inputBlockC.velocity.magnitude * inputBlockC.CheckOriginalVelocityDirection() +
+                                    2f * inputBlockB.velocity.magnitude * inputBlockB.CheckOriginalVelocityDirection();
+
+        /*pulleyD.SetVelocityMagnitude(-.5f * velocityMagnitude );
+        pulleyD.SetAccelerationMagnitude(-.5f * accelerationMagnitude);
+
+        pulleyC.SetVelocityMagnitude(2f * inputBlockB.velocity.magnitude * inputBlockB.CheckOriginalVelocityDirection());
+        pulleyC.SetAccelerationMagnitude(2f * inputBlockB.acceleration.magnitude * inputBlockB.CheckOriginalAccelerationDirection());*/
+
+        pulleyD.SetVelocityMagnitude(leftPulleyMagnitude);
+        pulleyD.SetAccelerationMagnitude(leftPulleyMagnitude);
+
+        pulleyC.SetVelocityMagnitude(rightPulleyMagnitude);
+        pulleyC.SetAccelerationMagnitude(rightPulleyMagnitude);
     }
 
    

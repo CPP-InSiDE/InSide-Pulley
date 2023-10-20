@@ -712,6 +712,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
       value: Simulation6
       objectReference: {fileID: 0}
+    - target: {fileID: 8825657144534453245, guid: 0c724c18476b0a441a15da1b0bc1defd, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 5525305b01ecd9c42bb61c5e1f63b71d, type: 3}
     - target: {fileID: 8825657144675615402, guid: 0c724c18476b0a441a15da1b0bc1defd, type: 3}
       propertyPath: m_text
       value: Simulation 6
@@ -826,6 +830,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
       value: Simulation5
       objectReference: {fileID: 0}
+    - target: {fileID: 8825657144534453245, guid: 0c724c18476b0a441a15da1b0bc1defd, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 3258430ead3ff4746ae088b636b2f761, type: 3}
     - target: {fileID: 8825657144675615402, guid: 0c724c18476b0a441a15da1b0bc1defd, type: 3}
       propertyPath: m_text
       value: Simulation 5
@@ -940,6 +948,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
       value: Simulation2
       objectReference: {fileID: 0}
+    - target: {fileID: 8825657144534453245, guid: 0c724c18476b0a441a15da1b0bc1defd, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 8db70e06a25328c4b91a1c0718f2a383, type: 3}
     - target: {fileID: 8825657144675615402, guid: 0c724c18476b0a441a15da1b0bc1defd, type: 3}
       propertyPath: m_text
       value: Simulation 2
@@ -1054,6 +1066,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
       value: Simulation3
       objectReference: {fileID: 0}
+    - target: {fileID: 8825657144534453245, guid: 0c724c18476b0a441a15da1b0bc1defd, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: b246f766e4d5b164398c8b6cd80c2195, type: 3}
     - target: {fileID: 8825657144675615402, guid: 0c724c18476b0a441a15da1b0bc1defd, type: 3}
       propertyPath: m_text
       value: Simulation 3
@@ -1235,6 +1251,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
       value: Simulation4
       objectReference: {fileID: 0}
+    - target: {fileID: 8825657144534453245, guid: 0c724c18476b0a441a15da1b0bc1defd, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: ca730d36b8aa6844399c0758f5dcdaeb, type: 3}
     - target: {fileID: 8825657144675615402, guid: 0c724c18476b0a441a15da1b0bc1defd, type: 3}
       propertyPath: m_text
       value: Simulation 4

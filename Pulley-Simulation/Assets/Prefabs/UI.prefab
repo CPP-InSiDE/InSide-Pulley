@@ -731,10 +731,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 45
       objectReference: {fileID: 0}
-    - target: {fileID: 2702690196040923457, guid: ceb262a527cabe240be39de50c6afc37, type: 3}
-      propertyPath: m_Text
-      value: 1.2
-      objectReference: {fileID: 0}
     - target: {fileID: 2702690196080011098, guid: ceb262a527cabe240be39de50c6afc37, type: 3}
       propertyPath: m_text
       value: "1.2\u200B"
@@ -920,10 +916,6 @@ PrefabInstance:
     - target: {fileID: 1981702254396323319, guid: ceb262a527cabe240be39de50c6afc37, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2702690196040923457, guid: ceb262a527cabe240be39de50c6afc37, type: 3}
-      propertyPath: m_Text
-      value: 1.2
       objectReference: {fileID: 0}
     - target: {fileID: 2702690196080011098, guid: ceb262a527cabe240be39de50c6afc37, type: 3}
       propertyPath: m_text

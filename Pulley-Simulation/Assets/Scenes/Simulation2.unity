@@ -10102,6 +10102,10 @@ PrefabInstance:
       propertyPath: referenceLine
       value: 
       objectReference: {fileID: 1216121681}
+    - target: {fileID: 4063386262654457892, guid: 9e2cf4223ec32494d9118d589540b2f4, type: 3}
+      propertyPath: m_Radius
+      value: 0.51
+      objectReference: {fileID: 0}
     - target: {fileID: 4063386262654457893, guid: 9e2cf4223ec32494d9118d589540b2f4, type: 3}
       propertyPath: m_RootOrder
       value: 5

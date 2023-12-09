@@ -497,6 +497,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7500772806679233469, guid: 6e730dc1e0321e64fbebf49de603aa01, type: 3}
+      propertyPath: m_text
+      value: "1\u200B"
+      objectReference: {fileID: 0}
     - target: {fileID: 7659112720691327971, guid: 6e730dc1e0321e64fbebf49de603aa01, type: 3}
       propertyPath: m_LocalRotation.w
       value: 0.92387956
@@ -508,6 +512,10 @@ PrefabInstance:
     - target: {fileID: 7659112720691327971, guid: 6e730dc1e0321e64fbebf49de603aa01, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -45
+      objectReference: {fileID: 0}
+    - target: {fileID: 7753430775751997627, guid: 6e730dc1e0321e64fbebf49de603aa01, type: 3}
+      propertyPath: m_text
+      value: "1\u200B"
       objectReference: {fileID: 0}
     - target: {fileID: 8173726692453744155, guid: 6e730dc1e0321e64fbebf49de603aa01, type: 3}
       propertyPath: m_LocalRotation.w

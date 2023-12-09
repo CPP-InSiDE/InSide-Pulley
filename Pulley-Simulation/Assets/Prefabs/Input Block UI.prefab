@@ -682,6 +682,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f555e82c9217b9145992663d7ab2c312, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  digitsAfterDecimal: 3
 --- !u!1 &2702690196080011100
 GameObject:
   m_ObjectHideFlags: 0
@@ -1709,6 +1710,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f555e82c9217b9145992663d7ab2c312, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  digitsAfterDecimal: 3
 --- !u!1 &8138401633804934016
 GameObject:
   m_ObjectHideFlags: 0

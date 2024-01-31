@@ -112,10 +112,12 @@ public class SimulationManager : MonoBehaviour
            WithinAcceptedRange(predictionBlock.affectedBlock.acceleration, solutionBlock.acceleration) == true)
         {
             userPredictionBlockSpriteRenderer.color = Color.green;
+            ServerManager.main.Attempt(true);
             SetExactSolution();
         }
         else {
             userPredictionBlockSpriteRenderer.color = defaultPredictionColor;
+            ServerManager.main.Attempt(false);
         }
     }
 

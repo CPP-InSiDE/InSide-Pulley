@@ -25,12 +25,12 @@ public class PulleyObject : MonoBehaviour
     private void Update()
     {
         if (referenceLine.GetLineLength() > previousLength) {
-            Debug.Log("Rotating CounterClockWise");
+            //Debug.Log("Rotating CounterClockWise");
             spinner.Rotate(Vector3.forward * 5f * directionMultiplier );
             previousLength = referenceLine.GetLineLength();
         } else if (referenceLine.GetLineLength() < previousLength)
         {
-            Debug.Log("Rotating ClockWise");
+            //Debug.Log("Rotating ClockWise");
             spinner.Rotate(Vector3.forward * -5f * directionMultiplier );
             previousLength = referenceLine.GetLineLength();
         }

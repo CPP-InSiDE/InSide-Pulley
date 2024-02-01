@@ -6,7 +6,13 @@ using UnityEngine.SceneManagement;
 public class LevelSelector : MonoBehaviour
 {
     // Start is called before the first frame update
-    
+    public static LevelSelector main;
+
+    private void Awake()
+    {
+        main = this;
+    }
+
     void Start()
     {
         
@@ -15,9 +21,13 @@ public class LevelSelector : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(1)) {
-            GoToScene("SimulationSelector");
-        }
+/*        if (Input.GetMouseButtonDown(1)) {
+            GoToHome();
+        }*/
+    }
+    public void GoToHome()
+    {
+        GoToScene("SimulationSelector");
     }
 
     public void GoToScene(string level) {

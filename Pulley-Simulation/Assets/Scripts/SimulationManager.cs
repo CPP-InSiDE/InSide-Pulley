@@ -42,11 +42,22 @@ public class SimulationManager : MonoBehaviour
     //[SerializeField] private RectTransform directionArrow;
 
     [SerializeField] private float marginOfError = .04f;
+    [SerializeField] private GameObject successObj;
+    [SerializeField] private GameObject failureObj;
+    [SerializeField] private Transform popupSpot;
 
 
     private void Start()
     {
         defaultPredictionColor = userPredictionBlockSpriteRenderer.color;    
+    }
+    public void RestartSimulation()
+    {
+        StopSimulation();
+        foreach (PhysicsObject block in movingObjects)
+        {
+            block.ResetBlock();
+        }
     }
 
     public void StartSimulation() {
@@ -113,10 +124,12 @@ public class SimulationManager : MonoBehaviour
         {
             userPredictionBlockSpriteRenderer.color = Color.green;
             ServerManager.main.Attempt(true);
+            Instantiate(successObj, popupSpot.position, Quaternion.identity, popupSpot);
             SetExactSolution();
         }
         else {
             userPredictionBlockSpriteRenderer.color = defaultPredictionColor;
+            Instantiate(failureObj, popupSpot.position, Quaternion.identity, popupSpot);
             ServerManager.main.Attempt(false);
         }
     }

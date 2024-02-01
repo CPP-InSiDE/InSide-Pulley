@@ -18,7 +18,8 @@ public class ServerManager : MonoBehaviour
     Coroutine failTextCoroutine;
     bool canAcceptSubmission = true;
     //string URI = "https://eea3cd8f-0bdd-4a0a-b3b1-e28fd00d815a-00-1vvq7amip0l3c.kirk.replit.dev/";
-    string URI = "http://20.168.13.43/";
+    //string URI = "http://20.168.13.43/";
+    string URI = "https://inside.slothlab.info/";
     float nextPingTime;
     float pingInterval = 30f;
     bool isPinging;

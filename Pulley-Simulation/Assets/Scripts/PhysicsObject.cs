@@ -34,7 +34,10 @@ public class PhysicsObject : MonoBehaviour
         //activatedTime = Time.time;
         active = false;
     }
-
+    public void ResetBlock()
+    {
+        transform.position = startPosition;
+    }
     private void FixedUpdate()
     {
         if (active == true) {

@@ -9672,6 +9672,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 227169489574746352, guid: 6e730dc1e0321e64fbebf49de603aa01, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 227169489574746352, guid: 6e730dc1e0321e64fbebf49de603aa01, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 227169489574746352, guid: 6e730dc1e0321e64fbebf49de603aa01, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 227169489574746352, guid: 6e730dc1e0321e64fbebf49de603aa01, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 227169489574746352, guid: 6e730dc1e0321e64fbebf49de603aa01, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1520858499475164993, guid: 6e730dc1e0321e64fbebf49de603aa01, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -9711,6 +9731,14 @@ PrefabInstance:
     - target: {fileID: 1628769972884354119, guid: 6e730dc1e0321e64fbebf49de603aa01, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3132763681201541377, guid: 6e730dc1e0321e64fbebf49de603aa01, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1581610745}
+    - target: {fileID: 3132763681201541377, guid: 6e730dc1e0321e64fbebf49de603aa01, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: RestartSimulation
       objectReference: {fileID: 0}
     - target: {fileID: 5288416261369141719, guid: 6e730dc1e0321e64fbebf49de603aa01, type: 3}
       propertyPath: m_AnchorMax.y
@@ -9779,26 +9807,6 @@ PrefabInstance:
     - target: {fileID: 5627347101179796670, guid: 6e730dc1e0321e64fbebf49de603aa01, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: StartSimulation
-      objectReference: {fileID: 0}
-    - target: {fileID: 5627347101179796671, guid: 6e730dc1e0321e64fbebf49de603aa01, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5627347101179796671, guid: 6e730dc1e0321e64fbebf49de603aa01, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5627347101179796671, guid: 6e730dc1e0321e64fbebf49de603aa01, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5627347101179796671, guid: 6e730dc1e0321e64fbebf49de603aa01, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5627347101179796671, guid: 6e730dc1e0321e64fbebf49de603aa01, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5627347102490287994, guid: 6e730dc1e0321e64fbebf49de603aa01, type: 3}
       propertyPath: m_Name
@@ -10901,6 +10909,9 @@ MonoBehaviour:
     blockAcceleration: {fileID: 780020376}
     accelerationDirection: {fileID: 780020377}
   marginOfError: 0.04
+  successObj: {fileID: 122294735727377923, guid: ee2090db764fa6a4ba1e35fd64e34568, type: 3}
+  failureObj: {fileID: 122294735727377923, guid: 675a97d0b0ec85540af661427d30b3e9, type: 3}
+  popupSpot: {fileID: 1940645000}
   inputBlock: {fileID: 1097663734}
 --- !u!114 &1581610746
 MonoBehaviour:
@@ -11164,6 +11175,11 @@ Transform:
 Transform:
   m_CorrespondingSourceObject: {fileID: 4063386262450552977, guid: 9e2cf4223ec32494d9118d589540b2f4, type: 3}
   m_PrefabInstance: {fileID: 1601724580}
+  m_PrefabAsset: {fileID: 0}
+--- !u!224 &1940645000 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 3694201327238347774, guid: 6e730dc1e0321e64fbebf49de603aa01, type: 3}
+  m_PrefabInstance: {fileID: 780020371}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &1996553028 stripped
 Transform:

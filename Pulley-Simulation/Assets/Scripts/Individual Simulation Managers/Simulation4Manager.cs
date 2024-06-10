@@ -15,8 +15,8 @@ public class Simulation4Manager : SimulationManager
     protected override void CalculateOutputBlocks()
     {
         //SetBaseBlock();
-        solutionBlock.SetVelocityMagnitude((-1/6f) * inputBlock.velocity.magnitude * inputBlock.CheckOriginalVelocityDirection());
-        solutionBlock.SetAccelerationMagnitude((-1/6f) * inputBlock.acceleration.magnitude * inputBlock.CheckOriginalAccelerationDirection());
+        solutionBlock.SetVelocityMagnitude((-1/7f) * inputBlock.velocity.magnitude * inputBlock.CheckOriginalVelocityDirection());
+        solutionBlock.SetAccelerationMagnitude((-1/7f) * inputBlock.acceleration.magnitude * inputBlock.CheckOriginalAccelerationDirection());
 
         
     }

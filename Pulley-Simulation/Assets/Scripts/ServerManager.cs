@@ -10,6 +10,7 @@ using TMPro;
 
 public class ServerManager : MonoBehaviour
 {
+    public bool isActive = false;
     public string problemName;
     public TMP_InputField loginInput;
     public GameObject failText;
@@ -35,6 +36,13 @@ public class ServerManager : MonoBehaviour
         }
         main = this;
         DontDestroyOnLoad(this);
+    }
+    private void Start()
+    {
+        if(!isActive)
+        {
+            mainPanel.SetActive(false);
+        }
     }
     private void Update()
     {
@@ -97,6 +105,10 @@ public class ServerManager : MonoBehaviour
     }
     IEnumerator GetRequest(string uri, Dictionary<string, string> parameters)
     {
+        if(!isActive)
+        {
+            yield break;
+        }
         string fulluri = uri;
         if(parameters.Count > 0)
         {

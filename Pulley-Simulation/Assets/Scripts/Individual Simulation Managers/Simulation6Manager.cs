@@ -19,15 +19,15 @@ public class Simulation6Manager : SimulationManager
     protected override void CalculateOutputBlocks()
     {
         //SetBaseBlock();
-        float velocityMagnitude = (   (-.5f * inputBlockA.velocity.magnitude * inputBlockA.CheckOriginalVelocityDirection())
-                                    + (-.5f * inputBlockB.velocity.magnitude * inputBlockB.CheckOriginalVelocityDirection())
-                                    + (-1.5f * inputBlockC.velocity.magnitude * inputBlockC.CheckOriginalVelocityDirection()) );
+        float velocityMagnitude = (   (-.25f * inputBlockA.velocity.magnitude * inputBlockA.CheckOriginalVelocityDirection())
+                                    + (-2f * inputBlockB.velocity.magnitude * inputBlockB.CheckOriginalVelocityDirection())
+                                    + (-1f * inputBlockC.velocity.magnitude * inputBlockC.CheckOriginalVelocityDirection()) );
         solutionBlock.SetVelocityMagnitude(velocityMagnitude);
 
 
-        float accelerationMagnitude = (    (-.5f * inputBlockA.acceleration.magnitude * inputBlockA.CheckOriginalAccelerationDirection())
-                                         + (-.5f * inputBlockB.acceleration.magnitude * inputBlockB.CheckOriginalAccelerationDirection())
-                                         + (-1.5f * inputBlockC.acceleration.magnitude * inputBlockC.CheckOriginalAccelerationDirection()));
+        float accelerationMagnitude = (    (-.25f * inputBlockA.acceleration.magnitude * inputBlockA.CheckOriginalAccelerationDirection())
+                                         + (-2f * inputBlockB.acceleration.magnitude * inputBlockB.CheckOriginalAccelerationDirection())
+                                         + (-1f * inputBlockC.acceleration.magnitude * inputBlockC.CheckOriginalAccelerationDirection()));
         solutionBlock.SetAccelerationMagnitude(accelerationMagnitude);
 
 
